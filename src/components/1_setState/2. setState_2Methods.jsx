@@ -15,9 +15,9 @@ export default class Count extends Component {
      * */ 
     
     // 函数式写法
-    this.setState( state =>({sum: state.sum+1}) )
+    // this.setState( state =>({sum: state.sum+1}) )
     // 可以传props：
-    // this.setState( (state,props) =>{console.log(props);return{sum: state.sum+1}} )
+    this.setState( (state,props) =>{console.log(props);return{sum: state.sum+1}} )
 
   }
 

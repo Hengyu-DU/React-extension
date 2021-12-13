@@ -1,6 +1,6 @@
-## 1. setState
+### 1. setState
 
-### 深入setState
+#### 深入setState
 一、 setState()更新状态是异步还是同步的？--> 要看setState的执行位置
   （1）在【由react所控制的回调中】更新的动作是【异步】的：生命周期钩子、react事件监听回调
   （2）在【非react控制的异步回调中】更新的动作是【同步】的：定时器回调、原生事件回调、Promise
@@ -26,11 +26,14 @@ const {sum} = this.state
 总结：
 1. 对象式的setState是函数式的setState的简写方式（语法糖）
 2. 使用原则：
-  （1）如果新状态不依赖于原状态 ===> 使用对象方式
-  （2）如果新状态依赖于原状态 ===> 使用函数方式
-  （3）如果需要在setState()执行后获取最新的状态数据，要在第二个[callback]函数中读取
+    （1）如果新状态不依赖于原状态 ===> 使用对象方式
+    （2）如果新状态依赖于原状态 ===> 使用函数方式
+    （3）如果需要在setState()执行后获取最新的状态数据，要在第二个[callback]函数中读取
+
+
 
 ### 2. lazyLoad
+
 路由组件的lazyLoad，实现路由组件的分开打包：
 ```js
 // 引入
@@ -49,6 +52,8 @@ const About = lazy(()=>{return import('./About')})
       </Switch>
     </Suspense>
 ```
+
+
 
 ### 3.Hooks
 
@@ -83,9 +88,9 @@ const About = lazy(()=>{return import('./About')})
 #### 4. Effect Hook
 1. Effect Hook 可以让你在函数组件中执行副作用操作，用于模拟类式组件中的生命周期勾子
 2. React中的副作用操作：
-  发送Ajax请求数据获取
-  设置订阅
-  启动定时器
+    发送Ajax请求数据获取
+    设置订阅
+    启动定时器
 3. 语法和说明：
 componentDidMount():
 ```
@@ -126,7 +131,9 @@ const xxx = useRef()
 用法与React.createRef()一模一样
 
 
+
 ### 4. Fragment
+
 1. 作用，避免无用的嵌套层级
 2. 使用
 引入：
@@ -145,7 +152,10 @@ render() {
   }
 ```
 
+
+
 ### 5.Context
+
 1. 理解： 一种组件间的通信方式，常用于【祖组件】和【后代组件】间通信
 2. 使用：
 ```
@@ -181,7 +191,10 @@ render() {
 
 3. 备注： 在开发中一般不用context，一般都用它封装react插件
 
+
+
 ### 6.组件间通信方式总结
+
 #### 组件间的关系
 * 父子组件
 * 兄弟组件（非嵌套组件）
